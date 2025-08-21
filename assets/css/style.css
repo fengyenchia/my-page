@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/* "Raleway", "Ubuntu", "Mozilla Headline", sans-serif */
+
+:root {
+    --dark-black: #060606;
+    --light-black: #2b2b2b;
+    --dark-gray: #a0a0a0;
+    --light-gray: #f9f9f9;
+    --dark-blue: #586f7c;
+    --light-blue: #a8d0d8;
+    --primary-color1: #ffc759;
+    --primary-color2: #f45b69;
+    --primary-color3: #7adaa5;
+    --primary-color4: #b771e5;
+    --primary-color5: #9a7e6f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+::selection {
+	background: var(--light-black);
+	color: white;
+}
+::-moz-selection {
+	background: var(--light-black);
+	color: white;
+}
+
+h1, h2 {
+    font-family: "Mozilla Headline", sans-serif;
+}
+
+/* 導覽列 */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+nav, nav * {
+    font-family: "Raleway", "Noto Sans TC", sans-serif;
+    background-color: var(--dark-black) !important;
+    color: white !important;
+    font-weight: 700;
+}
+
+nav .nav-link:hover {
+    color: var(--primary-color2) !important;
+}
+
+.navbar-toggler .line {
+    width: 30px;
+    height: 2.5px;
+    border-radius: 5px;
+    background-color: white !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition-duration: 0.5s;
+    transform: translate(-50%, -50%);
+}
+
+.navbar-toggler .line1 {
+    transform: translate(-50%, -350%);
+}
+
+.navbar-toggler .line3 {
+    transform: translate(-50%, 250%);
+}
+
+.navbar-toggler .line1-active {
+    width: 35px;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.navbar-toggler .line2-active {
+    opacity: 0;
+    width: 0;
+}
+.navbar-toggler .line3-active {
+    width: 35px;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+header {
+    margin-top: 56px;
+}
+
+/* 頁尾 */
+
+footer, footer * {
+    font-family: "Raleway", "Noto Sans TC", sans-serif;
+    font-weight: 500;
+    background-color: var(--dark-black) !important;
+    color: var(--dark-gray) !important;
+    text-align: center;
+    transition: 0.2s;
+}
+
+footer p {
+    margin: 0;
+}
+.email {
+    font-size: 14px;
+}
+.email a {
+    text-decoration: none;
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 15px 0 5px 0;
+}
+footer ul li i {
+    margin: 0 8px;
+}
+
+footer i:hover {
+    color: var(--light-gray) !important;
+}
+
+/* INDEX */
+.index {
+    height: calc(100vh - 56px);
+    background-color: var(--dark-black);
+}
+
+/* ABOUT */
+
+.about-me .name {
+    font-weight: 700;
+}
+
+.about-me .school {
+    font-weight: 400;
+}
+
+.about-me .school-items {
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.about-me .school-items .border-start {
+    font-weight: 400;
+    font-size: 0.7rem;
+    border-right: 2px solid var(--primary-color2);
+    padding-right: 5px;
+}
+
+.about-me .quote {
+    font-weight: 500;
+    font-family: "Raleway", sans-serif;
+    font-style: italic;
+    color: var(--dark-gray);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+.about-me .long-quote {
+    border-left: 5px solid var(--primary-color2);
+    transition: 1.2s cubic-bezier(0.3, 0.2, 0, 1);
+}
+
+.about-me .long-quote-bgc {
+    background: var(--primary-color2);
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 1.2s cubic-bezier(0.3, 0.2, 0, 1);
+}
+
+.about-me .long-quote:hover {
+    color: white;
+}
+
+.about-me .long-quote:hover .long-quote-bgc {
+    width: 100%;
+    height:100%;
+}
+
+/* ARTS */
+
+.art-work a {
+    color: var(--dark-blue);
+}
+
+.art-work .card {
+    transition: 0.3s;
+}
+
+.art-work .card:hover {
+    border: solid 1px var(--primary-color2);
+}
+
+.art-work-container p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* PHOTODRAPHY */
+
+.photography-work .card {
+    overflow: hidden;
+}
+
+.photography-work .card-body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.photography-work .card-title, .photography-work .card-text {
+    color: white !important;
+    display: block;
+    margin-top: 15px;
+    padding: 0 10px;
+}
+
+.photography-work .card-body:hover {
+    opacity: 1;
+}
+
+.photography-work-container p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* CONTACT */
+
+#contact-form button {
+    color: white;
+    background-color: var(--light-black);
+}
+
+#contact-form button:hover {
+    color: var(--light-black);
+    background-color: white;
+    border: 1px solid var(--light-black);
+}
+
+@media screen and (max-width: 768px) {
+    
+}
+
+@media screen and (max-width: 480px) {
+    h1, h2, h3, h4, p {
+        text-align: center;
+    }
+
+    /* ABOUT */
+
+    .about-me .quote {
+        writing-mode: horizontal-tb;
+        text-orientation: mixed;
+        padding: 25px 10px 0;
+    }
+
+    /* ART */
+
+    .art-work-header .description {
+        margin: 0;
+    }
+
+    .art-work-container img {
+        width: 100%;
+    }
+
+    /* PHOTOGRAPHY */
+
+    .photography-work-header .description {
+        margin: 0;
+    }
+
+    .photography-work-container img {
+        width: 100%;
+    }
+}

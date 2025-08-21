@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/assets/css/style.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
+</head>
+
+<body>
+    <nav></nav>
+
+    <header class="photography-banner container-fluid py-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h1 class="display-4">photographyistic Creations</h1>
+                <p class="lead">Explore the world of photography through my creations.</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-4">
+        <div class="photography-work row row-cols-1 row-cols-md-3 g-3">
+            <div class="col">
+                <div class="card mb-0">
+                    <a href="/photography/破碎與重生/Fragmentation and Rebirth.html" class="text-decoration-none"
+                        target="_blank">
+                        <img src="/photography/破碎與重生/Rebirth-1.png" class="card-img-top" alt="Rebirth">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Fragmentation and Rebirth</h5>
+                            <small class="card-text text-muted">This series explores the profound beauty found in
+                                transformation...</small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script src="assets/js/include.js"></script>
+    <script>
+        includeHTML('nav', 'components/navbar.html');
+        includeHTML('footer', 'components/footer.html');
+    </script>
+    <!-- Bootstrap JS Bundle (含 Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
