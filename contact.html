@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,6 +14,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/my-page/assets/images/favicon.png">
 </head>
+
 <body>
     <nav></nav>
 
@@ -26,18 +28,18 @@
     </header>
 
     <main class="container py-4 text-center">
-        <form id="contact-form" class="col-md-6 mx-auto">
+        <form id="contact-form" class="col-md-6 mx-auto" action="https://formspree.io/f/mdkdqapn" method="POST">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" required>
+                <input type="text" class="form-control" id="name" name="name" required>
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" required>
+                <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <div class="mb-3">
                 <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="4" required></textarea>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
             </div>
             <button type="submit" class="btn mt-3">Send Message</button>
         </form>
@@ -46,13 +48,14 @@
     <footer></footer>
 
     <script src="/my-page/assets/js/include.js"></script>
-        <script>
-            includeHTML('nav', '/my-page/components/navbar.html');
-            includeHTML('footer', '/my-page/components/footer.html');
-        </script>
-        <!-- Bootstrap JS Bundle (含 Popper) -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Custom JS -->
-        <script src="/my-page/assets/js/main.js"></script>
+    <script>
+        includeHTML('nav', '/my-page/components/navbar.html');
+        includeHTML('footer', '/my-page/components/footer.html');
+    </script>
+    <!-- Bootstrap JS Bundle (含 Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="/my-page/assets/js/main.js"></script>
 </body>
+
 </html>

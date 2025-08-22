@@ -262,6 +262,11 @@ footer i:hover {
     border: 1px solid var(--light-black);
 }
 
+#contact-form .form-control:focus {
+    box-shadow: 0 0 0 0.2rem var(--primary-color2);
+    border: 1px solid var(--primary-color2);
+}
+
 @media screen and (max-width: 768px) {
     
 }
