@@ -77,7 +77,7 @@ function setup() {
 
 function windowResized() {
 	resizeCanvas(windowWidth, windowHeight);
-	startGenerate(); // resize 時重新生成
+	startGenerate();
 }
 
 function startGenerate() {
@@ -94,51 +94,48 @@ function startGenerate() {
 async function generate(task) {
 	background(20);
 
-	// 🔒 鎖住 transform 狀態，避免旋轉累積
 	push();
-	push()
-	resetMatrix();
-	
-	let counts = floor(width * 2);
-	
-	let h = mainHue;
-	let s = random(40, 60);
-	let b = random(80, 100);
-	
-	translate(width / 2, height / 2);
-	for (let i = 0; i < counts; i++) {
+		push()
+		resetMatrix();
 		
-		// ❌ 如果這不是目前最新的 task，就中斷
-		if (drawingTask !== task) {
-			pop();
-			translate(width / 2, height / 2);
-			return;
-		}
+		let counts = floor(width * 2);
 		
-		if (myCase < 0.5) {
-			fill(h + random(-30, 30), s, b - i / 5);
-			if (random() < 0.1) {
-				fill(h + random(-30, 30), 0, 100 - i / 6);
+		let h = mainHue;
+		let s = random(40, 60);
+		let b = random(80, 100);
+		
+		translate(width / 2, height / 2);
+		for (let i = 0; i < counts; i++) {
+			
+			if (drawingTask !== task) {
+				pop();
+				translate(width / 2, height / 2);
+				return;
 			}
-		} else {
-			fill(0, 0, 100 - (10 + i / 5));
+			
+			if (myCase < 0.5) {
+				fill(h + random(-30, 30), s, b - i / 5);
+				if (random() < 0.1) {
+					fill(h + random(-30, 30), 0, 100 - i / 6);
+				}
+			} else {
+				fill(0, 0, 100 - (10 + i / 5));
+			}
+
+			rectMode(CENTER);
+			rect(
+				random(-width / 20, width / 20),
+				-20 - random(10) - i,
+				i / 8 + width / 16,
+				i / 8 + width / 10,
+				width / 200
+			);
+
+			rotate(PI / 10);
+			await sleep(5);
 		}
 
-		rectMode(CENTER);
-		rect(
-			random(-width / 20, width / 20),
-			-20 - random(10) - i,
-			i / 8 + width / 16,
-			i / 8 + width / 10,
-			width / 200
-		);
-
-		rotate(PI / 10);
-		await sleep(5);
-	}
-
-	pop(); // 🔓 還原 transform 狀態
-	// 疊材質
+		pop();
 	blendMode(MULTIPLY);
 	image(overAllTexture, 0, 0, width, height);
 	blendMode(BLEND);
